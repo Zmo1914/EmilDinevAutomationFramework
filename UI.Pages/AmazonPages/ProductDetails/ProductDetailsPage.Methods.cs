@@ -35,6 +35,8 @@ namespace UI.Pages.AmazonPages.ProductDetails
 
         public bool HasNewItemInBasketNotification()
         {
+            //return IsElementExist(By.xPath("//div[@id='huc-v2-order-row-containner']")); <-- This have to be changed.
+            // If not changed, and no element is found code will trow exception ...
             return IsElementExist(NewItemInBasketNotification);
         }
     }
