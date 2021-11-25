@@ -3,7 +3,6 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
@@ -71,7 +70,7 @@ namespace UI.Framework.DriverSetup
             alert.Accept();
         }
 
-        
+
         public IWebElement WaitForElementToExist(int waitTimeInSeconds, By by)
         {
             try
@@ -89,28 +88,17 @@ namespace UI.Framework.DriverSetup
             }
         }
 
-        // To be edit
-        public bool IsElementExist(IWebElement element/*By by*/)
+        public bool IsElementExist(By by)
         {
-            //try
-            //{
-            //    Driver.FindElement(by);
-            //   return true;                    
-            //}
-            //catch(NoSuchElementException)
-            //{
-            //    return true;
-            //}
-            
-            IList<IWebElement> elements = new List<IWebElement>();
-            elements.Add(element);
-
-            if (elements.Count > 0)
+            try
+            {
+                Driver.FindElement(by);
+                return true;
+            }
+            catch (NoSuchElementException)
             {
                 return true;
             }
-
-            return false;
         }
 
     }

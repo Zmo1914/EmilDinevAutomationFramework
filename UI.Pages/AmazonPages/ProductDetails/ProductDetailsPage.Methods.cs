@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace UI.Pages.AmazonPages.ProductDetails
 
         public bool HasBadge()
         {
-            return IsElementExist(ProductBadge);
+            return IsElementExist(By.XPath("//div[@class='badge-wrapper']/a"));
         }
 
         public string GetPrice()
@@ -35,9 +36,7 @@ namespace UI.Pages.AmazonPages.ProductDetails
 
         public bool HasNewItemInBasketNotification()
         {
-            //return IsElementExist(By.xPath("//div[@id='huc-v2-order-row-containner']")); <-- This have to be changed.
-            // If not changed, and no element is found code will trow exception ...
-            return IsElementExist(NewItemInBasketNotification);
+            return IsElementExist(By.XPath("//div[@id='huc-v2-order-row-containner']"));
         }
     }
 }
