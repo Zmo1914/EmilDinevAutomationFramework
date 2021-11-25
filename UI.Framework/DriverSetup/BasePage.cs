@@ -71,6 +71,7 @@ namespace UI.Framework.DriverSetup
             alert.Accept();
         }
 
+        
         public IWebElement WaitForElementToExist(int waitTimeInSeconds, By by)
         {
             try
@@ -88,8 +89,19 @@ namespace UI.Framework.DriverSetup
             }
         }
 
-        public bool IsElementExist(IWebElement element)
+        // To be edit
+        public bool IsElementExist(IWebElement element/*By by*/)
         {
+            //try
+            //{
+            //    Driver.FindElement(by);
+            //   return true;                    
+            //}
+            //catch(NoSuchElementException)
+            //{
+            //    return true;
+            //}
+            
             IList<IWebElement> elements = new List<IWebElement>();
             elements.Add(element);
 
