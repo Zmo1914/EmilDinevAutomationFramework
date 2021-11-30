@@ -9,6 +9,7 @@ namespace UI.TestData.AmazonTestData
         public string SearchName { get; set; }
         public string ExpectedName { get; set; }
         public string Badge { get; set; }
+        public string Price { get; set; }
 
         public static IEnumerable SetValues_AssertFirstShowedSearchProductAvailability
         {
@@ -64,6 +65,34 @@ namespace UI.TestData.AmazonTestData
                 inputStream.Close();
             }
         }
+
+        public static IEnumerable SetValues_AssertSearchProductPrice
+        {
+            get
+            {
+                string inputLine;
+                using FileStream inputStream =
+                    new("AmazonTestData\\SourceFiles\\AssertSearchProductPrice.csv",
+                        FileMode.Open,
+                        FileAccess.Read);
+                StreamReader streamReader = new(inputStream);
+
+                while ((inputLine = streamReader.ReadLine()) != null)
+                {
+                    var data = inputLine.Split(',');
+                    yield return new Product
+                    {
+                        Type = data[0],
+                        SearchName = data[1],
+                        Price = data[2].Replace(@"\n", "\n").Replace(@"\r", "\r")
+                    };
+                }
+
+                streamReader.Close();
+                inputStream.Close();
+            }
+        }
+
 
     }
 }

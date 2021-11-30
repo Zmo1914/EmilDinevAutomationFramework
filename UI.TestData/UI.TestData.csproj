@@ -20,6 +20,9 @@
     <None Update="AmazonTestData\SourceFiles\AssertSearchProductHasBadge.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="AmazonTestData\SourceFiles\AssertSearchProductPrice.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

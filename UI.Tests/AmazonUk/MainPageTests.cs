@@ -28,12 +28,13 @@ namespace UI.Tests.AmazonUk
             Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(product.Badge), $"Assert failed.");
         }
 
-        [TestCase("Books", "Harry Potter and the Cursed Child", "£4\r\n00")]
-        public void AssertSearchProductPrice(string productType, string productName, string expectedPrice)
+        [TestCaseSource(typeof(Product), "SetValues_AssertSearchProductPrice")]
+        public void AssertSearchProductPrice(Product product)
         {
-            mainPage.HeaderSection.SearchForProduct(productType, productName);
+            mainPage.HeaderSection.SearchForProduct(product.Type, product.SearchName);
 
-            Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(expectedPrice), $"Assert failed.");
+            Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(product.Price), $"Assert failed.\n" +
+                $"Expected price:{product.Price} |");
         }
     }
 }
