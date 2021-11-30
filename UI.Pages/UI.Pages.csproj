@@ -30,6 +30,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ProductDetailsPageLocators.resx</DependentUpon>
     </Compile>
+    <Compile Update="AmazonPages\ShoppingBasket\ShoppingBasketPageLocators.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ShoppingBasketPageLocators.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -40,6 +45,10 @@
     <EmbeddedResource Update="AmazonPages\ProductDetails\ProductDetailsPageLocators.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ProductDetailsPageLocators.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AmazonPages\ShoppingBasket\ShoppingBasketPageLocators.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ShoppingBasketPageLocators.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
