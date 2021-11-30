@@ -25,12 +25,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>MainPageLocators.resx</DependentUpon>
     </Compile>
+    <Compile Update="AmazonPages\ProductDetails\ProductDetailsPageLocators.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ProductDetailsPageLocators.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="AmazonPages\Main\MainPageLocators.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MainPageLocators.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AmazonPages\ProductDetails\ProductDetailsPageLocators.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductDetailsPageLocators.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
