@@ -14,7 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="AmazonTestData\" />
+    <None Update="AmazonTestData\SourceFiles\AssertFirstShowedSearchProductAvailability.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AmazonTestData\SourceFiles\AssertSearchProductHasBadge.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
