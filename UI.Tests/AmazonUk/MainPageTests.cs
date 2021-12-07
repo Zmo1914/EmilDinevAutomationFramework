@@ -14,10 +14,12 @@ namespace UI.Tests.AmazonUk
 
         [TestCaseSource(typeof(Product), "SetValues_AssertFirstShowedSearchProductAvailability")]
         public void AssertFirstShowedSearchProductAvailability(Product product)
-        {
-            mainPage.HeaderSection.SearchForProduct(product.Type, product.SearchName);
-
-            Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(product.ExpectedName), $"Assert failed.");
+        {            
+            FunctionalityUnderTest(() =>
+            {
+                mainPage.HeaderSection.SearchForProduct(product.Type, product.SearchName);
+                Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(product.ExpectedName), $"Assert failed.");
+            });
         }
 
         [TestCaseSource(typeof(Product), "SetValues_AssertSearchProductHasBadge")]
