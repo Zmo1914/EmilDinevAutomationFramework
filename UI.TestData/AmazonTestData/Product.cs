@@ -16,15 +16,17 @@ namespace UI.TestData.AmazonTestData
             get
             {
                 string inputLine;
+
                 using FileStream inputStream =
                     new("AmazonTestData\\SourceFiles\\AssertFirstShowedSearchProductAvailability.csv",
                         FileMode.Open,
                         FileAccess.Read);
+
                 StreamReader streamReader = new(inputStream);
 
                 while ((inputLine = streamReader.ReadLine()) != null)
                 {
-                    var data = inputLine.Split(',');
+                    var data = inputLine.Split(';');
                     yield return new Product
                     {
                         Type = data[0],
@@ -38,21 +40,22 @@ namespace UI.TestData.AmazonTestData
             }
         }
 
-
         public static IEnumerable SetValues_AssertSearchProductHasBadge
         {
             get
             {
                 string inputLine;
+
                 using FileStream inputStream =
                     new("AmazonTestData\\SourceFiles\\AssertSearchProductHasBadge.csv",
                         FileMode.Open,
                         FileAccess.Read);
+
                 StreamReader streamReader = new(inputStream);
 
                 while ((inputLine = streamReader.ReadLine()) != null)
                 {
-                    var data = inputLine.Split(',');
+                    var data = inputLine.Split(';');
                     yield return new Product
                     {
                         Type = data[0],
@@ -71,15 +74,17 @@ namespace UI.TestData.AmazonTestData
             get
             {
                 string inputLine;
+
                 using FileStream inputStream =
                     new("AmazonTestData\\SourceFiles\\AssertSearchProductPrice.csv",
                         FileMode.Open,
                         FileAccess.Read);
+
                 StreamReader streamReader = new(inputStream);
 
                 while ((inputLine = streamReader.ReadLine()) != null)
                 {
-                    var data = inputLine.Split(',');
+                    var data = inputLine.Split(';');
                     yield return new Product
                     {
                         Type = data[0],
@@ -92,7 +97,5 @@ namespace UI.TestData.AmazonTestData
                 inputStream.Close();
             }
         }
-
-
     }
 }
