@@ -53,10 +53,10 @@ namespace UI.Tests.AmazonUk
             catch (Exception expception)
             {
                 string screenshotFileName = $"{TestContext.CurrentContext.Test.MethodName}_{DateTime.Now.Hour}_{DateTime.Now.Second}.jpg";
-                string filePath = "";
+                string filePath = @"C:\Users\emild\source\repos\EmilDinevAutomationFramework\Screenshots";
 
                 var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-                screenshot.SaveAsFile(@{})
+                screenshot.SaveAsFile($@"{filePath}{screenshotFileName}");
             }
         }
     }
