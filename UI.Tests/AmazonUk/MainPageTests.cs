@@ -9,12 +9,15 @@ namespace UI.Tests.AmazonUk
         [TestCase("Amazon.co.uk: Low Prices in Electronics, Books, Sports Equipment & more")]
         public void AssertWebPageTitle(string expectedTitle)
         {
-            Assert.That(mainPage.GetTitle().Equals(expectedTitle), "Assert failed.");
+            FunctionalityUnderTest(() =>
+            {
+                Assert.That(mainPage.GetTitle().Equals(expectedTitle), "Assert failed.");
+            });
         }
 
         [TestCaseSource(typeof(Product), "SetValues_AssertFirstShowedSearchProductAvailability")]
         public void AssertFirstShowedSearchProductAvailability(Product product)
-        {            
+        {
             FunctionalityUnderTest(() =>
             {
                 mainPage.HeaderSection.SearchForProduct(product.Type, product.SearchName);
@@ -25,18 +28,23 @@ namespace UI.Tests.AmazonUk
         [TestCaseSource(typeof(Product), "SetValues_AssertSearchProductHasBadge")]
         public void AssertSearchProductHasBadge(Product product)
         {
-            mainPage.HeaderSection.SearchForProduct(product.Type, product.SearchName);
-
-            Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(product.Badge), $"Assert failed.");
+            FunctionalityUnderTest(() =>
+            {
+                mainPage.HeaderSection.SearchForProduct(product.Type, product.SearchName);
+                Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(product.Badge), $"Assert failed.");
+            });
         }
 
         [TestCaseSource(typeof(Product), "SetValues_AssertSearchProductPrice")]
         public void AssertSearchProductPrice(Product product)
         {
-            mainPage.HeaderSection.SearchForProduct(product.Type, product.SearchName);
+            FunctionalityUnderTest(() =>
+            {
+                mainPage.HeaderSection.SearchForProduct(product.Type, product.SearchName);
+                Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(product.Price), $"Assert failed.\n" +
+                    $"Expected price:{product.Price} |");
+            });
 
-            Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(product.Price), $"Assert failed.\n" +
-                $"Expected price:{product.Price} |");
         }
     }
 }
