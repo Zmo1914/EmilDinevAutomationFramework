@@ -2,16 +2,11 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UI.Framework.DriverSetup;
 using UI.Pages.AmazonPages.Main;
 using UI.Pages.AmazonPages.ProductDetails;
 using UI.Pages.AmazonPages.ShoppingBasket;
-using UI.Pages.AmazonSections.Header;
 
 namespace UI.Tests.AmazonUk
 {
@@ -59,7 +54,7 @@ namespace UI.Tests.AmazonUk
                 var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
                 screenshot.SaveAsFile(@$"{filePath}{screenshotFileName}");
 
-                using(StreamWriter file = new StreamWriter(Path.Combine(@$"{filePath}Test_Logger.log"),true))
+                using (StreamWriter file = new StreamWriter(Path.Combine(@$"{filePath}Test_Logger.log"), true))
                 {
                     file.WriteLine(
                         $"TIME: {DateTime.Now} | Test Name: \"{TestContext.CurrentContext.Test.Name}\"\n" +
@@ -70,7 +65,7 @@ namespace UI.Tests.AmazonUk
                 }
 
                 throw;
-            }            
+            }
         }
     }
 }
