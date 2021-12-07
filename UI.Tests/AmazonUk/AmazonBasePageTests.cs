@@ -43,5 +43,21 @@ namespace UI.Tests.AmazonUk
             driver.Close();
             driver.Quit();
         }
+
+        protected void FunctionalityUnderTest(Action action)
+        {
+            try
+            {
+                action();
+            }
+            catch (Exception expception)
+            {
+                string screenshotFileName = $"{TestContext.CurrentContext.Test.MethodName}_{DateTime.Now.Hour}_{DateTime.Now.Second}.jpg";
+                string filePath = "";
+
+                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+                screenshot.SaveAsFile(@{})
+            }
+        }
     }
 }
