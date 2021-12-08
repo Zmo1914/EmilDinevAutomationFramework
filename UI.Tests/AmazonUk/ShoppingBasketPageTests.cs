@@ -4,7 +4,7 @@ namespace UI.Tests.AmazonUk
 {
     class ShoppingBasketPageTests : AmazonBasePageTests
     {
-        [SetUp]
+        [SetUp]    
         public void SearchProductSetup()
         {
             mainPage.HeaderSection.SearchForProduct("Books", "Harry Potter and the Cursed Child");
