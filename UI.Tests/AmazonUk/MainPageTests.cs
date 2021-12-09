@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using UI.TestData.AmazonTestData;
 
 namespace UI.Tests.AmazonUk
 {
@@ -8,31 +9,42 @@ namespace UI.Tests.AmazonUk
         [TestCase("Amazon.co.uk: Low Prices in Electronics, Books, Sports Equipment & more")]
         public void AssertWebPageTitle(string expectedTitle)
         {
-            Assert.That(mainPage.GetTitle().Equals(expectedTitle), "Assert failed.");
+            FunctionalityUnderTest(() =>
+            {
+                Assert.That(mainPage.GetTitle().Equals(expectedTitle), "Assert failed.");
+            });
         }
 
-        [TestCase("Books", "Harry Potter and the Cursed Child", "Harry Potter and the Cursed Child - Parts One and Two")]
-        public void AssertFirstShowedSearchProductAvailability(string productType, string productName, string expectedValue)
+        [TestCaseSource(typeof(Product), "SetValues_AssertFirstShowedSearchProductAvailability")]
+        public void AssertFirstShowedSearchProductAvailability(Product product)
         {
-            mainPage.HeaderSection.SearchForProduct(productType, productName);
-
-            Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(expectedValue), $"Assert failed.");
+            FunctionalityUnderTest(() =>
+            {
+                mainPage.HeaderSection.SearchForProduct(product.Type, product.SearchName);
+                Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(product.ExpectedName), $"Assert failed.");
+            });
         }
 
-        [TestCase("Books", "Harry Potter and the Cursed Child", "Best Seller")]
-        public void AssertSearchProductHasBadge(string productType, string productName, string expectedBadge)
+        [TestCaseSource(typeof(Product), "SetValues_AssertSearchProductHasBadge")]
+        public void AssertSearchProductHasBadge(Product product)
         {
-            mainPage.HeaderSection.SearchForProduct(productType, productName);
-
-            Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(expectedBadge), $"Assert failed.");
+            FunctionalityUnderTest(() =>
+            {
+                mainPage.HeaderSection.SearchForProduct(product.Type, product.SearchName);
+                Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(product.Badge), $"Assert failed.");
+            });
         }
 
-        [TestCase("Books", "Harry Potter and the Cursed Child", "£4\r\n00")]
-        public void AssertSearchProductPrice(string productType, string productName, string expectedPrice)
+        [TestCaseSource(typeof(Product), "SetValues_AssertSearchProductPrice")]
+        public void AssertSearchProductPrice(Product product)
         {
-            mainPage.HeaderSection.SearchForProduct(productType, productName);
+            FunctionalityUnderTest(() =>
+            {
+                mainPage.HeaderSection.SearchForProduct(product.Type, product.SearchName);
+                Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(product.Price), $"Assert failed.\n" +
+                    $"Expected price:{product.Price} |");
+            });
 
-            Assert.That(mainPage.ExtractTextFromSearchResultList()[0].Contains(expectedPrice), $"Assert failed.");
         }
     }
 }

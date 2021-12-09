@@ -12,6 +12,6 @@ namespace UI.Pages.AmazonPages.ShoppingBasket
         }
 
         private IList<IWebElement> ItemsList =>
-            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath("//div[@data-name='Active Items']/div[@data-asin]")));
+            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(ShoppingBasketPageLocators.ItemsList)));
     }
 }

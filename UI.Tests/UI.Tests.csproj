@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\UI.Framework\UI.Framework.csproj" />
     <ProjectReference Include="..\UI.Pages\UI.Pages.csproj" />
+    <ProjectReference Include="..\UI.TestData\UI.TestData.csproj" />
   </ItemGroup>
 
 </Project>

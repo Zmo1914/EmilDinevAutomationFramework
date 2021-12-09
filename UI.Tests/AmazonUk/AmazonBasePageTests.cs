@@ -2,15 +2,11 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using UI.Framework.DriverSetup;
 using UI.Pages.AmazonPages.Main;
 using UI.Pages.AmazonPages.ProductDetails;
 using UI.Pages.AmazonPages.ShoppingBasket;
-using UI.Pages.AmazonSections.Header;
 
 namespace UI.Tests.AmazonUk
 {
@@ -42,6 +38,34 @@ namespace UI.Tests.AmazonUk
         {
             driver.Close();
             driver.Quit();
+        }
+
+        protected void FunctionalityUnderTest(Action action)
+        {
+            try
+            {
+                action();
+            }
+            catch (Exception ex)
+            {
+                string screenshotFileName = $"{TestContext.CurrentContext.Test.MethodName}_{DateTime.Now.Hour}_{DateTime.Now.Second}.jpg";
+                string filePath = "C:\\Users\\emild\\source\\repos\\EmilDinevAutomationFramework\\Screenshots\\";
+
+                var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+                screenshot.SaveAsFile(@$"{filePath}{screenshotFileName}");
+
+                using (StreamWriter file = new StreamWriter(Path.Combine(@$"{filePath}Test_Logger.log"), true))
+                {
+                    file.WriteLine(
+                        $"TIME: {DateTime.Now} | Test Name: \"{TestContext.CurrentContext.Test.Name}\"\n" +
+                        $"    - Screenshot: \"{screenshotFileName}\"\n" +
+                        $"    - Error message: {ex.Message}\n" +
+                        $"----------------\n");
+                    file.Close();
+                }
+
+                throw;
+            }
         }
     }
 }

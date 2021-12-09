@@ -18,19 +18,17 @@ namespace UI.Pages.AmazonPages.Main
 
 
         private IWebElement AcceptAllButton =>
-            Wait.Until(ExpectedConditions.ElementToBeClickable(By.
-                XPath("//input[@id='sp-cc-accept']")));
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainPageLocators.AcceptAllButton)));
 
         private IWebElement ContinueShipButton =>
-            Wait.Until(ExpectedConditions.ElementToBeClickable(By.
-                XPath("//span[contains(text(),'CONTINUE')]/parent::span")));
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainPageLocators.ContinueShipButton)));
 
 
-        private IList<IWebElement> SearchResultTitleList => Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.
-                XPath("//span[@class='a-size-medium a-color-base a-text-normal']")));
+        private IList<IWebElement> SearchResultTitleList =>
+            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.SearchResultTitleList)));
 
-        private IList<IWebElement> SearchResultList => Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.
-            XPath("//span[@class='a-size-medium a-color-base a-text-normal']/ancestor::div[@class='a-section']")));
+        private IList<IWebElement> SearchResultList =>
+            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.SearchResultList)));
     }
 
 }

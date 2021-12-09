@@ -32,6 +32,7 @@ namespace UI.Pages.AmazonPages.Main
             for (int i = 0; i < SearchResultList.Count; i++)
             {
                 newList.Add(SearchResultList[i].Text);
+                //Console.WriteLine(SearchResultList[i].Text);
             }            
 
             return newList;

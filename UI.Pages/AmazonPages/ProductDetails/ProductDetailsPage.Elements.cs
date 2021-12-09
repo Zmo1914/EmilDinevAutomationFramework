@@ -15,23 +15,22 @@ namespace UI.Pages.AmazonPages.ProductDetails
         public HeaderSection HeaderSection { get; private set; }
 
         private IWebElement AddToBacketButton =>
-            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@id='add-to-cart-button']")));
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(ProductDetailsPageLocators.AddToBacketButton)));
 
         private IWebElement ProductTitleLabel =>
-            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[@id='productTitle']")));
+            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(ProductDetailsPageLocators.ProductTitleLabel)));
 
         private IWebElement ProductBadge =>
-            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class='badge-wrapper']/a")));
+            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(ProductDetailsPageLocators.ProductBadge)));
 
         private IWebElement ProductPriceLabel =>
-            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[@id='price']")));
+            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(ProductDetailsPageLocators.ProductPriceLabel)));
 
         private IWebElement SelectedFormatButton =>
-            Wait.Until(ExpectedConditions.ElementIsVisible(By.
-                XPath("//span[@class='a-button a-button-selected a-spacing-mini a-button-toggle format']")));
+            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(ProductDetailsPageLocators.SelectedFormatButton)));
 
         private IWebElement NewItemInBasketNotification =>
-            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@id='huc-v2-order-row-container']")));
+            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(ProductDetailsPageLocators.NewItemInBasketNotification)));
 
 
     }

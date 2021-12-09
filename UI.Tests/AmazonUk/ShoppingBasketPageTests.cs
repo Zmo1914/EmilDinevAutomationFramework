@@ -4,7 +4,7 @@ namespace UI.Tests.AmazonUk
 {
     class ShoppingBasketPageTests : AmazonBasePageTests
     {
-        [SetUp]
+        [SetUp]    
         public void SearchProductSetup()
         {
             mainPage.HeaderSection.SearchForProduct("Books", "Harry Potter and the Cursed Child");
@@ -17,8 +17,10 @@ namespace UI.Tests.AmazonUk
         [TestCase("Harry Potter and the Cursed Child - Parts One and Two")]
         public void Test1(string expectedItem)
         {
-            Assert.That(shoppingBasketPage.CheckItem(expectedItem));
+            FunctionalityUnderTest(() =>
+            {
+                Assert.That(shoppingBasketPage.CheckItem(expectedItem));
+            });
         }
-
     }
 }
