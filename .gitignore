@@ -364,3 +364,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/.sonarqube/conf/0/FilesToAnalyze.txt
+/.sonarqube/conf/0
+/.sonarqube/conf/1
+/.sonarqube/conf/2
+/.sonarqube/conf/3
+/.sonarqube/conf/cs
+/.sonarqube/conf
