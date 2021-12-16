@@ -16,26 +16,37 @@ namespace UI.Pages.AmazonSections.Header
         {
         }
 
+        /// <summary>
+        /// INPUT element 'Search box'. Main search in the page/section.
+        /// </summary>
         private IWebElement SearchBoxInput =>
-            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//input[@id='twotabsearchtextbox']")));
+            Wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(HeaderSectionLocators.SearchBoxInputCss)));
 
+        /// <summary>
+        /// Button element 'Submit' of the main search bar.
+        /// </summary>
         private IWebElement SearchBoxSubmitButton =>
-            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//input[@value='Go']")));
+            Wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(HeaderSectionLocators.SearchBoxSubmitButtonCss)));
 
+        /// <summary>
+        /// BUTTON element 'Bascket' int the upper right corner of the section.
+        /// </summary>
         private IWebElement BasketButton =>
-            Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[@id='nav-cart-count']")));
+            Wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(HeaderSectionLocators.BasketButtonCss)));
 
 
+        /// <summary>
+        /// SELECT element 'Search in'.
+        /// </summary>
         private SelectElement SearchBoxSelect
         {
             get
             {
                 IWebElement element =
-                    Wait.Until(ExpectedConditions.ElementExists(By.XPath("//select[@id='searchDropdownBox']")));
+                    Wait.Until(ExpectedConditions.ElementExists(By.CssSelector(HeaderSectionLocators.SearchBoxSelectCss)));
 
                 return new SelectElement(element);
             }
         }
-
     }
 }

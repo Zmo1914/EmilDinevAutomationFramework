@@ -35,6 +35,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ShoppingBasketPageLocators.resx</DependentUpon>
     </Compile>
+    <Compile Update="AmazonSections\Header\HeaderSectionLocators.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HeaderSectionLocators.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -49,6 +54,10 @@
     <EmbeddedResource Update="AmazonPages\ShoppingBasket\ShoppingBasketPageLocators.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ShoppingBasketPageLocators.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AmazonSections\Header\HeaderSectionLocators.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>HeaderSectionLocators.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
