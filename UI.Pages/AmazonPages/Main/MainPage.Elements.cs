@@ -28,7 +28,6 @@ namespace UI.Pages.AmazonPages.Main
             Wait.Until(ExpectedConditions.ElementToBeClickable(
                 By.XPath(DataBaseConnection.GetLocatorByName("ContinueShipButton"))));
 
-
         private IList<IWebElement> SearchResultTitleList =>
             Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy
                 (By.XPath(DataBaseConnection.GetLocatorByName("SearchResultTitleList"))));
