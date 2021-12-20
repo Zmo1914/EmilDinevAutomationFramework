@@ -1,26 +1,39 @@
-﻿using OpenQA.Selenium;
+﻿using Newtonsoft.Json;
+using Npgsql;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.IO;
 using System.Reflection;
+using UI.Framework.Data;
 
 namespace UI.Framework.DriverSetup
 {
     public abstract partial class BasePage
     {
-        private IWebDriver driver;
-        private WebDriverWait wait;
+        private readonly IWebDriver driver;
+        private readonly WebDriverWait wait;
 
         public IWebDriver Driver => driver;
         public WebDriverWait Wait => wait;
 
-        public BasePage(IWebDriver driver)
+
+        public FrameworkData FrameworkData { get; private set; } 
+
+        protected BasePage(IWebDriver driver)
         {
             this.driver = driver;
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+
+            FrameworkData = new FrameworkData();
+            FrameworkData = JsonConvert.DeserializeObject<FrameworkData>(File.ReadAllText("Data\\Framework.json"));
         }
+
+
+
+
 
         public static IWebDriver Start(Browser browser)
         {

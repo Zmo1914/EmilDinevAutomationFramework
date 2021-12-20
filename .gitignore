@@ -371,3 +371,4 @@ FodyWeavers.xsd
 /.sonarqube/conf/3
 /.sonarqube/conf/cs
 /.sonarqube/conf
+/UI.Framework/Data/Framework.json

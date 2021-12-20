@@ -1,8 +1,10 @@
-﻿using NUnit.Framework;
+﻿using Newtonsoft.Json;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.IO;
+using UI.Framework.Data;
 using UI.Framework.DriverSetup;
 using UI.Pages.AmazonPages.Main;
 using UI.Pages.AmazonPages.ProductDetails;
@@ -18,10 +20,14 @@ namespace UI.Tests.AmazonUk
         protected MainPage mainPage;
         protected ProductDetailsPage productDetailsPage;
         protected ShoppingBasketPage shoppingBasketPage;
+        //protected FrameworkData frameworkData;
 
         [SetUp]
         public void TestSetup()
         {
+            //frameworkData = new FrameworkData();
+            //frameworkData = JsonConvert.DeserializeObject<FrameworkData>(File.ReadAllText("Data\\Framework.json"));
+
             driver = BasePage.Start(Browser.Chrome);
 
             mainPage = new MainPage(driver);
