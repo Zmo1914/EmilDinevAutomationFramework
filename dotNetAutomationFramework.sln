@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI.Tests", "UI.Tests\UI.Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI.Pages", "UI.Pages\UI.Pages.csproj", "{D15336A2-21A2-4651-8C54-9CDFB65A3F11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.TestData", "UI.TestData\UI.TestData.csproj", "{691BCFEF-B4F0-49D1-8407-F94F6625E00A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI.TestData", "UI.TestData\UI.TestData.csproj", "{691BCFEF-B4F0-49D1-8407-F94F6625E00A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dodax.Pages", "Dodax.Pages\Dodax.Pages.csproj", "{32185C62-DFF6-4D45-BAD0-DA28EE40B7A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dodax.Sections", "Dodax.Sections\Dodax.Sections.csproj", "{EE490EE3-47C7-4B70-94E6-016A4AC3BBC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{691BCFEF-B4F0-49D1-8407-F94F6625E00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{691BCFEF-B4F0-49D1-8407-F94F6625E00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{691BCFEF-B4F0-49D1-8407-F94F6625E00A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32185C62-DFF6-4D45-BAD0-DA28EE40B7A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32185C62-DFF6-4D45-BAD0-DA28EE40B7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32185C62-DFF6-4D45-BAD0-DA28EE40B7A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32185C62-DFF6-4D45-BAD0-DA28EE40B7A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE490EE3-47C7-4B70-94E6-016A4AC3BBC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE490EE3-47C7-4B70-94E6-016A4AC3BBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE490EE3-47C7-4B70-94E6-016A4AC3BBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE490EE3-47C7-4B70-94E6-016A4AC3BBC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
