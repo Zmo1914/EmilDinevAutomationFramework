@@ -1,5 +1,4 @@
-﻿using Npgsql;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
 using System.Collections.Generic;
 using UI.Framework.Data;
@@ -19,7 +18,7 @@ namespace UI.Pages.AmazonPages.Main
             HeaderSection = new HeaderSection(driver);
             DataBaseConnection = new DataBaseConnection();
         }
-        
+
         private IWebElement AcceptAllButton =>
             Wait.Until(ExpectedConditions.ElementToBeClickable(
                 By.XPath(DataBaseConnection.GetLocatorByName("AcceptAllButton"))));
