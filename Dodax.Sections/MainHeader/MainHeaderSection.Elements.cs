@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
@@ -21,8 +22,17 @@ namespace Dodax.Sections.MainHeader
         private IWebElement HeaderSearchBarButton =>
             Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainHeaderSectionLocators.HeaderSearchBarInput)));
 
-        private IWebElement HeaderSearchBarSelect =>
-            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainHeaderSectionLocators.HeaderSearchBarSelect)));
+        private SelectElement HeaderSearchBarSelect
+        {
+            get
+            {
+                IWebElement element =
+                    Wait.Until(ExpectedConditions.ElementExists(By.CssSelector(MainHeaderSectionLocators.HeaderSearchBarSelect)));
+
+                return new SelectElement(element);
+            }
+        }
+
 
         private IWebElement HeaderShoppingCartButton =>
             Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainHeaderSectionLocators.HeaderShoppingCartButton)));

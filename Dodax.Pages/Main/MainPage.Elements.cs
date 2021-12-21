@@ -23,5 +23,9 @@ namespace Dodax.Pages.Main
         private IList<IWebElement> SearchResultPageContentList =>
             Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.SearchResultPageContentList)));
 
+        private IWebElement PaginationNextButton =>
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainPageLocators.PaginationNextButton)));
+
+
     }
 }

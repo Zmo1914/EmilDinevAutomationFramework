@@ -61,6 +61,15 @@ namespace Dodax.Pages.Main {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to //a[@data-qa=&apos;paginationLinkNext&apos;].
+        /// </summary>
+        internal static string PaginationNextButton {
+            get {
+                return ResourceManager.GetString("PaginationNextButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to //div[@data-qa=&apos;searchResultPageContent&apos;].
         /// </summary>
         internal static string SearchResultPageContentList {

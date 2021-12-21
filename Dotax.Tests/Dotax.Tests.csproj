@@ -11,27 +11,13 @@
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
     <PackageReference Include="coverlet.collector" Version="3.1.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.1.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="96.0.4664.4500" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dodax.Sections\Dodax.Sections.csproj" />
+    <ProjectReference Include="..\Dodax.Pages\Dodax.Pages.csproj" />
     <ProjectReference Include="..\UI.Framework\UI.Framework.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Main\MainPageLocators.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>MainPageLocators.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Main\MainPageLocators.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>MainPageLocators.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

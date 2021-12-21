@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Npgsql;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
@@ -30,9 +31,6 @@ namespace UI.Framework.DriverSetup
             FrameworkData = new FrameworkData();
             FrameworkData = JsonConvert.DeserializeObject<FrameworkData>(File.ReadAllText("Data\\Framework.json"));
         }
-
-
-
 
 
         public static IWebDriver Start(Browser browser)
@@ -113,6 +111,5 @@ namespace UI.Framework.DriverSetup
                 return true;
             }
         }
-
     }
 }
