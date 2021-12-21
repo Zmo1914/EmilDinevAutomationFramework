@@ -13,20 +13,20 @@ namespace UI.Framework.Data
 
     public DataBaseConnection()
         {
-            var con = JsonConvert.DeserializeObject<FrameworkData>(File.ReadAllText("Data\\Framework.json"));
-            Connection = $"Host={con.PostgreHost};Username={con.PostgreUsername};Password={con.PostgrePassword};Database={con.PostgreDatabase}";
-            Table = con.PostgreTable;
+            var configData = JsonConvert.DeserializeObject<FrameworkData>(File.ReadAllText("Data\\Framework.json"));
+            Connection = $"Host={configData.PostgreHost};Username={configData.PostgreUsername};Password={configData.PostgrePassword};Database={configData.PostgreDatabase}";
+            Table = configData.PostgreTable;
         }
 
         public string GetLocatorByName(string locatorName)
         {
-            using var con = new NpgsqlConnection(Connection);
-            con.Open();
-            using var cmd = new NpgsqlCommand($"SELECT element_locator FROM {Table} WHERE element_name='{locatorName}'", con);
-            string locator = cmd.ExecuteScalar().ToString();
-            con.Close();
+            using var connection = new NpgsqlConnection(Connection);
+            connection.Open();
+            using var script = new NpgsqlCommand($"SELECT element_locator FROM {Table} WHERE element_name='{locatorName}'", connection);
+            string elementLocator = script.ExecuteScalar().ToString();
+            connection.Close();
 
-            return locator;
+            return elementLocator;
         }
 
 
