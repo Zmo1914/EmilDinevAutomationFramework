@@ -7,23 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
-    <PackageReference Include="Npgsql" Version="6.0.1" />
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
     <PackageReference Include="coverlet.collector" Version="3.1.0" />
-    <PackageReference Include="Selenium.Support" Version="4.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\Framework.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\Dodax.Pages\Dodax.Pages.csproj" />
+    <ProjectReference Include="..\UI.Framework\UI.Framework.csproj" />
   </ItemGroup>
 
 </Project>

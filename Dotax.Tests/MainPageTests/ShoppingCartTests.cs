@@ -20,33 +20,19 @@ namespace Dotax.Tests.MainPageTests
 
         }
 
-        [TestCase]
+        [Test]
         public void AssertTotalPriceChoppingCart()
         {
-            mainPage.MainHeaderSection.GoToAllcategoriesPage();
-            categoriesPage.SelectCategory();
-            string[] productA = mainPage.GetProductToBasket();
-            mainPage.MainHeaderSection.GoToMainPage();
+            addToCartFacade.AddProduct(3);
 
-            mainPage.MainHeaderSection.GoToAllcategoriesPage();
-            categoriesPage.SelectCategory();
-            string[] productB = mainPage.GetProductToBasket();
-            mainPage.MainHeaderSection.GoToMainPage();
-
-            mainPage.MainHeaderSection.GoToAllcategoriesPage();
-            categoriesPage.SelectCategory();
-            string[] productC = mainPage.GetProductToBasket();
-            mainPage.MainHeaderSection.GoToMainPage();
-
-            float expectedTotalAmount = float.Parse(productA[1], CultureInfo.InvariantCulture) + float.Parse(productB[1],
-                CultureInfo.InvariantCulture) + float.Parse(productC[1], CultureInfo.InvariantCulture);
-            string expected = expectedTotalAmount.ToString("0.00");
+            string expectedPrice = addToCartFacade.TotalCartPrice;
 
             float actualTotalAmount = mainPage.ShoppingCartMiniSection.GetTotalAmount();
             string actual = actualTotalAmount.ToString("0.00");
-            Assert.That(actual.Equals(expected), $"FAILED. Expected total amount of the products is not equal to actual.");
+            Assert.That(actual.Equals(expectedPrice), $"FAILED. Expected total amount of the products is not equal to actual.");
 
         }
+            
 
     }
 }

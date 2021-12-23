@@ -1,4 +1,5 @@
 ﻿using System;
+using Dodax.Facades.AddToCart;
 using Dodax.Pages.Categories;
 using Dodax.Pages.Main;
 using NUnit.Framework;
@@ -15,6 +16,7 @@ namespace Dotax.Tests
 
         protected MainPage mainPage;
         protected CategoriesPage categoriesPage; 
+        protected AddToCartFacade addToCartFacade;
 
         [SetUp]
         public void TestSetup()
@@ -23,6 +25,7 @@ namespace Dotax.Tests
 
             mainPage = new MainPage(driver);
             categoriesPage = new CategoriesPage(driver);
+            addToCartFacade = new AddToCartFacade(driver);
 
             mainPage.GoToUrl("https://www.dodax.ca/");
             mainPage.AcceptAll();

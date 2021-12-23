@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Dodax.Facades\Dodax.Facades.csproj" />
     <ProjectReference Include="..\Dodax.Pages\Dodax.Pages.csproj" />
     <ProjectReference Include="..\UI.Framework\UI.Framework.csproj" />
   </ItemGroup>
