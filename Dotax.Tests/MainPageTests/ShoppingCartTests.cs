@@ -1,5 +1,7 @@
 ﻿using NUnit.Framework;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace Dotax.Tests.MainPageTests
 {
@@ -20,19 +22,28 @@ namespace Dotax.Tests.MainPageTests
 
         }
 
-        [Test]
-        public void AssertTotalPriceChoppingCart()
+        [TestCase(3)]
+        public void AssertTotalPriceInChoppingCart(int productCounter)
         {
-            addToCartFacade.AddProduct(3);
+            addToCartFacade.AddProduct(productCounter);
 
-            string expectedPrice = addToCartFacade.TotalCartPrice;
-
-            float actualTotalAmount = mainPage.ShoppingCartMiniSection.GetTotalAmount();
-            string actual = actualTotalAmount.ToString("0.00");
-            Assert.That(actual.Equals(expectedPrice), $"FAILED. Expected total amount of the products is not equal to actual.");
-
+            Assert.That(mainPage.ShoppingCartMiniSection.GetTotalAmount().Equals(addToCartFacade.TotalCartPrice), $"FAILED. Expected total amount of the products is not equal to actual.");
         }
-            
+
+        [TestCase(2)]
+        public void AssertProductPriceInChoppingCart(int productCounter)
+        {
+            addToCartFacade.AddProduct(productCounter);
+
+            CollectionAssert.AreEquivalent(addToCartFacade.ProductPrices, mainPage.ShoppingCartMiniSection.GetProductPrices());
+        }
+
+        [TestCase(4)]
+        public void AssertProductPriceReserButtonsInChoppingCart(int productCounter)
+        {
+            addToCartFacade.AddProduct(productCounter);
+            mainPage.ShoppingCartMiniSection.AddQuantityToProduct(2,3);
+        }
 
     }
 }

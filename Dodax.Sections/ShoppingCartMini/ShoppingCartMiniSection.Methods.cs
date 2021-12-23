@@ -9,14 +9,36 @@ namespace Dodax.Sections.ShoppingCartMini
 {
     public partial class ShoppingCartMiniSection
     {
-        public float GetTotalAmount()
+        public string GetTotalAmount()
         {
             MainHeaderSection.OpenShoppingCart();
             if (MainHeaderSection.GetShoppingCartCounter() > 0)
             {
-                return float.Parse(TotalAmountLabel.GetAttribute("data-qa-total"), CultureInfo.InvariantCulture);
+                return float.Parse(TotalAmountLabel.GetAttribute("data-qa-total"), CultureInfo.InvariantCulture).ToString("0.00");
             }
-            return 0;
+            return null;
+        }
+
+        public List<string> GetProductPrices()
+        {
+            List<string> products = new();
+
+            for (int i = 0; i < ChoppingCartProductList.Count; i++)
+            {
+                products.Add(ChoppingCartProductList[i].GetAttribute("data-product-price"));
+            }
+
+            return products;
+        }
+
+
+        public void AddQuantityToProduct(int productNumber, int quantity)
+        {
+            for (int i = 0; i < quantity; i++)
+            {
+                PlusButtonsList[productNumber - 1].Click();
+            }
+            
         }
     }
 }

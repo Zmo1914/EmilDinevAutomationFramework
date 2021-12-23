@@ -21,5 +21,15 @@ namespace Dodax.Sections.ShoppingCartMini
 
         private IWebElement TotalAmountLabel =>
             Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(ShoppingCartMiniSectionLocators.TotalAmountLabel)));
+
+        private IList<IWebElement> ChoppingCartProductList =>  Wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By
+                .XPath(ShoppingCartMiniSectionLocators.ChoppingCartProductList)));
+
+        private IList<IWebElement> PlusButtonsList => Wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By
+        .XPath(ShoppingCartMiniSectionLocators.PlusButtonsList)));
+
+        private IList<IWebElement> MinusButtonsList => Wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By
+            .XPath(ShoppingCartMiniSectionLocators.MinusButtonsList)));
+
     }
 }

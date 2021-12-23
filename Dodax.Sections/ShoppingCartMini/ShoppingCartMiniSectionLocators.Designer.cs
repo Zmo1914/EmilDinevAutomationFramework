@@ -61,6 +61,33 @@ namespace Dodax.Sections.ShoppingCartMini {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to //li[@class=&apos;hd-cartDropdown__item js-hd-cartDropdown__item&apos;].
+        /// </summary>
+        internal static string ChoppingCartProductList {
+            get {
+                return ResourceManager.GetString("ChoppingCartProductList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //button[contains(@data-qa,&apos;shoppingCartPopUpItemQtyMinus&apos;)].
+        /// </summary>
+        internal static string MinusButtonsList {
+            get {
+                return ResourceManager.GetString("MinusButtonsList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //button[contains(@data-qa,&apos;shoppingCartPopUpItemQtyPlus&apos;)].
+        /// </summary>
+        internal static string PlusButtonsList {
+            get {
+                return ResourceManager.GetString("PlusButtonsList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to //div[@data-qa-total].
         /// </summary>
         internal static string TotalAmountLabel {

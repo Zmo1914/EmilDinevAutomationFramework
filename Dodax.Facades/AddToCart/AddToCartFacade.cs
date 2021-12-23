@@ -15,10 +15,15 @@ namespace Dodax.Facades.AddToCart
     public class AddToCartFacade : BasePage
     {
         private float totalPrice;
-        public string TotalCartPrice { get => totalPrice.ToString("0.00"); }
+        private IList<string> productNames = new List<string>();
+        private IList<string> productPrices = new List<string>();
 
-        private MainPage MainPage;
-        private CategoriesPage CategoriesPage;
+        public string TotalCartPrice { get => totalPrice.ToString("0.00"); }
+        public IList<string> ProductNames { get => productNames; set => productNames = value; }
+        public IList<string> ProductPrices { get => productPrices; set => productPrices = value; }
+
+        private readonly MainPage MainPage;
+        private readonly CategoriesPage CategoriesPage;
 
         public AddToCartFacade(IWebDriver driver) : base(driver)
         {
@@ -34,6 +39,9 @@ namespace Dodax.Facades.AddToCart
                 MainPage.MainHeaderSection.GoToAllcategoriesPage();
                 CategoriesPage.SelectCategory();
                 string[] productA = MainPage.GetProductToBasket();
+                productNames.Add(productA[0]);
+                productPrices.Add(productA[1]);
+
                 totalPrice += float.Parse(productA[1], CultureInfo.InvariantCulture);
 
                 MainPage.MainHeaderSection.GoToMainPage();
