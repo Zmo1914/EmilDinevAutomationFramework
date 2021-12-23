@@ -7,23 +7,8 @@ namespace Dotax.Tests.MainPageTests
 {
     internal class ShoppingCartTests : DotaxBaseTests
     {
-        [TestCase(
-            "Der kleine Hobbit",
-            "Der kleine Hobbit, Veredelte Mini-Ausgabe",
-            "Der Matrix Code",
-            "Books & Audiobooks")]
-        public void GetSearch(string searchProductA, string searchProductB, string searchProductC, string productCategorie)
-        {
-            mainPage.MainHeaderSection.Search(searchProductA, productCategorie);
-            mainPage.MainHeaderSection.Search(searchProductB, productCategorie);
-            mainPage.MainHeaderSection.Search(searchProductC, productCategorie);
-            //mainPage.MainHeaderSection.Search(searchProductA, productCategorie);
-
-
-        }
-
         [TestCase(3)]
-        public void AssertTotalPriceInChoppingCart(int productCounter)
+        public void AssertTotalPriceInShoppingCart(int productCounter)
         {
             addToCartFacade.AddProduct(productCounter);
 
@@ -31,18 +16,22 @@ namespace Dotax.Tests.MainPageTests
         }
 
         [TestCase(2)]
-        public void AssertProductPriceInChoppingCart(int productCounter)
+        public void AssertProductPriceInShoppingCart(int productCounter)
         {
             addToCartFacade.AddProduct(productCounter);
 
             CollectionAssert.AreEquivalent(addToCartFacade.ProductPrices, mainPage.ShoppingCartMiniSection.GetProductPrices());
         }
 
-        [TestCase(4)]
-        public void AssertProductPriceReserButtonsInChoppingCart(int productCounter)
+        // not ready
+        [TestCase(2,2,3)]
+        public void AssertProductPriceReserButtonsInShoppingCart(int productCounter, int productNumber, int additional)
         {
             addToCartFacade.AddProduct(productCounter);
-            mainPage.ShoppingCartMiniSection.AddQuantityToProduct(2,3);
+            mainPage.MainHeaderSection.OpenShoppingCart();
+            mainPage.ShoppingCartMiniSection.AddQuantityToProduct(productNumber, additional);
+
+            bool isTrue = mainPage.ShoppingCartMiniSection.AssertPriceByQuantity(productNumber);
         }
 
     }

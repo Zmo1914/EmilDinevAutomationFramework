@@ -121,12 +121,15 @@
     <value>//li[@class='hd-cartDropdown__item js-hd-cartDropdown__item']</value>
   </data>
   <data name="MinusButtonsList" xml:space="preserve">
-    <value>//button[contains(@data-qa,'shoppingCartPopUpItemQtyMinus')]</value>
+    <value>//button[contains(@data-qa,'cartPageItemQuantity__decrease')]</value>
   </data>
   <data name="PlusButtonsList" xml:space="preserve">
-    <value>//button[contains(@data-qa,'shoppingCartPopUpItemQtyPlus')]</value>
+    <value>//button[contains(@data-qa,'cartPageItemQuantity__increase')]</value>
   </data>
   <data name="TotalAmountLabel" xml:space="preserve">
     <value>//div[@data-qa-total]</value>
+  </data>
+  <data name="VIewShoppingCartButton" xml:space="preserve">
+    <value>//a[@data-qa='headerShoppingCartPopUpShoppingCartPageLink']</value>
   </data>
 </root>

@@ -70,7 +70,7 @@ namespace Dodax.Sections.ShoppingCartMini {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to //button[contains(@data-qa,&apos;shoppingCartPopUpItemQtyMinus&apos;)].
+        ///   Looks up a localized string similar to //button[contains(@data-qa,&apos;cartPageItemQuantity__decrease&apos;)].
         /// </summary>
         internal static string MinusButtonsList {
             get {
@@ -79,7 +79,7 @@ namespace Dodax.Sections.ShoppingCartMini {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to //button[contains(@data-qa,&apos;shoppingCartPopUpItemQtyPlus&apos;)].
+        ///   Looks up a localized string similar to //button[contains(@data-qa,&apos;cartPageItemQuantity__increase&apos;)].
         /// </summary>
         internal static string PlusButtonsList {
             get {
@@ -93,6 +93,15 @@ namespace Dodax.Sections.ShoppingCartMini {
         internal static string TotalAmountLabel {
             get {
                 return ResourceManager.GetString("TotalAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //a[@data-qa=&apos;headerShoppingCartPopUpShoppingCartPageLink&apos;].
+        /// </summary>
+        internal static string VIewShoppingCartButton {
+            get {
+                return ResourceManager.GetString("VIewShoppingCartButton", resourceCulture);
             }
         }
     }

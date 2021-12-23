@@ -22,7 +22,7 @@ namespace Dodax.Sections.ShoppingCartMini
         private IWebElement TotalAmountLabel =>
             Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(ShoppingCartMiniSectionLocators.TotalAmountLabel)));
 
-        private IList<IWebElement> ChoppingCartProductList =>  Wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By
+        private IList<IWebElement> ShoppingCartProductList =>  Wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By
                 .XPath(ShoppingCartMiniSectionLocators.ChoppingCartProductList)));
 
         private IList<IWebElement> PlusButtonsList => Wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By
@@ -31,5 +31,7 @@ namespace Dodax.Sections.ShoppingCartMini
         private IList<IWebElement> MinusButtonsList => Wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(By
             .XPath(ShoppingCartMiniSectionLocators.MinusButtonsList)));
 
+        private IWebElement VIewShoppingCartButton => 
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(ShoppingCartMiniSectionLocators.VIewShoppingCartButton)));
     }
 }
