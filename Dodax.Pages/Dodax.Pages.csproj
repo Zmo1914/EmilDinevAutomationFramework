@@ -20,6 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Categories\CategoriesPageLocators.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CategoriesPageLocators.resx</DependentUpon>
+    </Compile>
     <Compile Update="Main\MainPageLocators.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -28,6 +33,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Categories\CategoriesPageLocators.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CategoriesPageLocators.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Main\MainPageLocators.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MainPageLocators.Designer.cs</LastGenOutput>

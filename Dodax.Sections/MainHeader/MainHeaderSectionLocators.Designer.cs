@@ -70,11 +70,29 @@ namespace Dodax.Sections.MainHeader {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to //button[@data-qa=&apos;headerCategoriesTreeBtnAll&apos;].
+        /// </summary>
+        internal static string HeaderBackToAllCategoriesButton {
+            get {
+                return ResourceManager.GetString("HeaderBackToAllCategoriesButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to //button[@data-qa=&apos;headerCategoriesOpenBtnDesktop&apos;].
         /// </summary>
         internal static string HeaderCategoriesButton {
             get {
                 return ResourceManager.GetString("HeaderCategoriesButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //a[@data-qa=&apos;headerMainLogoLink&apos;].
+        /// </summary>
+        internal static string HeaderMainLogoLink {
+            get {
+                return ResourceManager.GetString("HeaderMainLogoLink", resourceCulture);
             }
         }
         
@@ -111,6 +129,15 @@ namespace Dodax.Sections.MainHeader {
         internal static string HeaderShoppingCartButton {
             get {
                 return ResourceManager.GetString("HeaderShoppingCartButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //span[@data-qa=&apos;cartPopupItemsQty&apos;].
+        /// </summary>
+        internal static string ShoppingCartCounter {
+            get {
+                return ResourceManager.GetString("ShoppingCartCounter", resourceCulture);
             }
         }
     }

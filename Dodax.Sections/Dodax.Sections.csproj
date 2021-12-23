@@ -24,12 +24,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>MainHeaderSectionLocators.resx</DependentUpon>
     </Compile>
+    <Compile Update="ShoppingCartMini\ShoppingCartMiniSectionLocators.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ShoppingCartMiniSectionLocators.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="MainHeader\MainHeaderSectionLocators.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MainHeaderSectionLocators.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ShoppingCartMini\ShoppingCartMiniSectionLocators.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ShoppingCartMiniSectionLocators.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

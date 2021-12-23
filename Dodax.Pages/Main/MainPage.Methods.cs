@@ -1,6 +1,8 @@
 ﻿using OpenQA.Selenium;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Dodax.Pages.Main
 {
@@ -90,18 +92,45 @@ namespace Dodax.Pages.Main
 
         public void GetProductToBasket(string productName)
         {
-            for (int i = 0; i < ProductCartButtonList.Count; i++)
+            for (int i = 0; i < DataProductButtonList.Count; i++)
             {
                 string dataProductName = DataProductNameList[i].GetAttribute("data-product-name");
                 if (dataProductName.Equals(productName))
                 {
-                    ProductCartButtonList[i].Click();
-                    Console.WriteLine($"Time: {DateTime.Now} | Product with data name: \"{dataProductName}\" added in basket.");
+                    DataProductButtonList[i].Click();
+                    Console.WriteLine($"Time: {DateTime.Now} | Product with data name \"{dataProductName}\" added in basket.");
                 }
             }
         }
 
+        public string[] GetProductToBasket()
+        {
+            if (DataProductNameList.Count != 0)
+            {
+                var random = new Random();
+                int randomProduct = random.Next(DataProductNameList.Count);
 
+                string[] productData = new string[] { 
+                    DataProductNameList[randomProduct].GetAttribute("data-product-name"),
+                    DataProductNameList[randomProduct].GetAttribute("data-product-price") };
 
+                int counterBeforeAdd = MainHeaderSection.GetShoppingCartCounter();
+                DataProductButtonList[randomProduct].SendKeys(Keys.Enter);
+
+                Console.WriteLine($"Time: {DateTime.Now} | Product with data \"{productData[0]}\" added in basket.");
+
+                while (true)
+                {
+                    if (MainHeaderSection.GetShoppingCartCounter() > counterBeforeAdd)
+                    {
+                        break;
+                    }
+                    Thread.Sleep(500);
+                }
+                return productData;
+            }
+
+            return null;
+        }
     }
 }

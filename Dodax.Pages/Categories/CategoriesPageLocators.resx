@@ -117,31 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HeaderAllCategoriesButton" xml:space="preserve">
-    <value>//a[@data-qa='headerCategoriesTreeTitleLink']</value>
-  </data>
-  <data name="HeaderBackToAllCategoriesButton" xml:space="preserve">
-    <value>//button[@data-qa='headerCategoriesTreeBtnAll']</value>
-  </data>
-  <data name="HeaderCategoriesButton" xml:space="preserve">
-    <value>//button[@data-qa='headerCategoriesOpenBtnDesktop']</value>
-  </data>
-  <data name="HeaderMainLogoLink" xml:space="preserve">
-    <value>//a[@data-qa='headerMainLogoLink']</value>
-  </data>
-  <data name="HeaderSearchBarButton" xml:space="preserve">
-    <value>//button[@data-qa='headerSearchBtn']</value>
-  </data>
-  <data name="HeaderSearchBarInput" xml:space="preserve">
-    <value>//input[@data-qa='headerSearchBarInput']</value>
-  </data>
-  <data name="HeaderSearchBarSelect" xml:space="preserve">
-    <value>//option[text()='All categories']/parent::select</value>
-  </data>
-  <data name="HeaderShoppingCartButton" xml:space="preserve">
-    <value>//a[@data-qa='headerShoppingCartLink']</value>
-  </data>
-  <data name="ShoppingCartCounter" xml:space="preserve">
-    <value>//span[@data-qa='cartPopupItemsQty']</value>
+  <data name="CategoriesList" xml:space="preserve">
+    <value>//div[@class='cat-categories']/descendant::a</value>
   </data>
 </root>

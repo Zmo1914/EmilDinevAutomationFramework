@@ -1,4 +1,5 @@
 ﻿using System;
+using Dodax.Pages.Categories;
 using Dodax.Pages.Main;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -13,6 +14,7 @@ namespace Dotax.Tests
         protected WebDriverWait wait;
 
         protected MainPage mainPage;
+        protected CategoriesPage categoriesPage; 
 
         [SetUp]
         public void TestSetup()
@@ -20,6 +22,7 @@ namespace Dotax.Tests
             driver = BasePage.Start(Browser.Chrome);
 
             mainPage = new MainPage(driver);
+            categoriesPage = new CategoriesPage(driver);
 
             mainPage.GoToUrl("https://www.dodax.ca/");
             mainPage.AcceptAll();

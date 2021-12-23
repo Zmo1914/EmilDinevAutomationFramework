@@ -31,5 +31,24 @@ namespace Dodax.Sections.MainHeader
             HeaderCategoriesButton.Click();
             HeaderAllCategoriesButton.Click(); //SendKeys(Keys.Enter);
         }
+
+        public void GoToMainPage()
+        {
+            HeaderMainLogoLink.Click();
+        }
+
+        public int GetShoppingCartCounter()
+        {
+            if (ShoppingCartCounter.Text.Equals(""))
+            {
+                return 0;
+            }
+            return int.Parse(ShoppingCartCounter.Text);
+        }
+
+        public void OpenShoppingCart()
+        {            
+            HeaderShoppingCartButton.Click();
+        }
     }
 }

@@ -42,5 +42,12 @@ namespace Dodax.Sections.MainHeader
         private IWebElement HeaderAllCategoriesButton =>
             Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainHeaderSectionLocators.HeaderAllCategoriesButton)));
 
+        private IWebElement ShoppingCartCounter =>
+            Wait.Until(ExpectedConditions.ElementExists(By.XPath(MainHeaderSectionLocators.ShoppingCartCounter)));
+
+        private IWebElement HeaderMainLogoLink =>
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainHeaderSectionLocators.HeaderMainLogoLink)));
+
+
     }
 }

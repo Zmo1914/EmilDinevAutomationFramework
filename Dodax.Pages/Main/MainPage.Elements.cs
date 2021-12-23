@@ -1,4 +1,5 @@
 ﻿using Dodax.Sections.MainHeader;
+using Dodax.Sections.ShoppingCartMini;
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -14,10 +15,12 @@ namespace Dodax.Pages.Main
     public partial class MainPage : BasePage
     {
         public MainHeaderSection MainHeaderSection { get; private set; }
+        public ShoppingCartMiniSection ShoppingCartMiniSection { get; private set; }
 
         public MainPage(IWebDriver driver) : base(driver)
         {
             MainHeaderSection = new MainHeaderSection(driver);
+            ShoppingCartMiniSection = new ShoppingCartMiniSection(driver);
         }
 
         private IWebElement AcceptAllButton =>
@@ -45,11 +48,8 @@ namespace Dodax.Pages.Main
         private IList<IWebElement> DataProductNameList => 
             Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.DataProductNameList)));
 
-        private IList<IWebElement> DataProductPriceList =>
-            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.DataProductPriceList)));
-
-        private IList<IWebElement> ProductCartButtonList =>
-            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.ProductCartButtonList)));
+        private IList<IWebElement> DataProductButtonList =>
+            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.DataProductButtonList)));
 
         private IList<IWebElement> SearchResultPageContentList =>
             Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.SearchResultPageContentList)));

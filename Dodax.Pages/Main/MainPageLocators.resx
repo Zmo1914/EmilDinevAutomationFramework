@@ -120,6 +120,9 @@
   <data name="AcceptAllButton" xml:space="preserve">
     <value>//button[@data-qa='cookiesAgreementAcceptBtn']</value>
   </data>
+  <data name="DataProductButtonList" xml:space="preserve">
+    <value>//button[contains(@class,'buttonAddToCart') and @type='button']</value>
+  </data>
   <data name="DataProductNameList" xml:space="preserve">
     <value>//div[@data-product-name]</value>
   </data>
@@ -140,9 +143,6 @@
   </data>
   <data name="PaginationNumericButtonList" xml:space="preserve">
     <value>//a[@data-qa='paginationLink']</value>
-  </data>
-  <data name="ProductCartButtonList" xml:space="preserve">
-    <value>//button[contains(@class,'buttonAddToCart') and @type='button']</value>
   </data>
   <data name="SearchResultPageContentList" xml:space="preserve">
     <value>//div[@data-qa='searchResultPageContent']</value>

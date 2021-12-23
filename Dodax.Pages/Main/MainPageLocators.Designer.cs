@@ -70,6 +70,15 @@ namespace Dodax.Pages.Main {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to //button[contains(@class,&apos;buttonAddToCart&apos;) and @type=&apos;button&apos;].
+        /// </summary>
+        internal static string DataProductButtonList {
+            get {
+                return ResourceManager.GetString("DataProductButtonList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to //div[@data-product-name].
         /// </summary>
         internal static string DataProductNameList {
@@ -129,15 +138,6 @@ namespace Dodax.Pages.Main {
         internal static string PaginationNumericButtonList {
             get {
                 return ResourceManager.GetString("PaginationNumericButtonList", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to //button[contains(@class,&apos;buttonAddToCart&apos;) and @type=&apos;button&apos;].
-        /// </summary>
-        internal static string ProductCartButtonList {
-            get {
-                return ResourceManager.GetString("ProductCartButtonList", resourceCulture);
             }
         }
         
