@@ -21,7 +21,8 @@ namespace Dotax.Tests
 
             mainPage = new MainPage(driver);
 
-            mainPage.LoginDotaxSite("https://www.dodax.ca/");
+            mainPage.GoToUrl("https://www.dodax.ca/");
+            mainPage.AcceptAll();
         }
 
         [TearDown]

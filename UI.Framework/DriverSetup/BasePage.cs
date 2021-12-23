@@ -3,11 +3,13 @@ using Npgsql;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.IO;
 using System.Reflection;
+using System.Threading;
 using UI.Framework.Data;
 
 namespace UI.Framework.DriverSetup
@@ -63,8 +65,24 @@ namespace UI.Framework.DriverSetup
             }
         }
 
+        public void FocutToElement(IWebElement element)
+        {            
+            Actions actions = new(driver);
+            actions.MoveToElement(element);
+            actions.Perform();
+
+        }
+
+        public void ScrollToBottomOfPage()
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("window.scrollTo(0, document.body.scrollHeight)");
+        }
+
         public void GoToUrl(string url)
         {
+            MaximizeBrowser();
+            Driver.Manage().Cookies.DeleteAllCookies();
             Driver.Navigate().GoToUrl(url);
 
             Console.WriteLine($"Time: {DateTime.Now} | Page address: {url} is loaded.");

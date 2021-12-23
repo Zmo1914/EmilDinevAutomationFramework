@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,12 @@ namespace UI.Framework.Extentions
 {
     public static class WebElementExtentions
     {
+        public static void Focus(this IWebElement element, IWebDriver driver)
+        {
+            Actions actions = new Actions(driver);
+            actions.MoveToElement(element);
+            actions.Perform();
+        }
 
         public static void SelectValueByText(this SelectElement selectElement, string valueByText)
         {

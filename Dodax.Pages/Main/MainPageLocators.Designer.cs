@@ -19,7 +19,7 @@ namespace Dodax.Pages.Main {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class MainPageLocators {
@@ -61,11 +61,83 @@ namespace Dodax.Pages.Main {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to //button[@data-qa=&apos;cookiesAgreementAcceptBtn&apos;].
+        /// </summary>
+        internal static string AcceptAllButton {
+            get {
+                return ResourceManager.GetString("AcceptAllButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //div[@data-product-name].
+        /// </summary>
+        internal static string DataProductNameList {
+            get {
+                return ResourceManager.GetString("DataProductNameList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //div[@data-product-price].
+        /// </summary>
+        internal static string DataProductPriceList {
+            get {
+                return ResourceManager.GetString("DataProductPriceList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //div[@class=&apos;ft-copyright&apos;].
+        /// </summary>
+        internal static string Footer {
+            get {
+                return ResourceManager.GetString("Footer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //a[@data-qa=&apos;paginationLinkActive&apos;].
+        /// </summary>
+        internal static string PaginationAvtivePageButton {
+            get {
+                return ResourceManager.GetString("PaginationAvtivePageButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //a[@data-qa=&apos;paginationLinkPrev&apos;].
+        /// </summary>
+        internal static string PaginationBackButton {
+            get {
+                return ResourceManager.GetString("PaginationBackButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to //a[@data-qa=&apos;paginationLinkNext&apos;].
         /// </summary>
         internal static string PaginationNextButton {
             get {
                 return ResourceManager.GetString("PaginationNextButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //a[@data-qa=&apos;paginationLink&apos;].
+        /// </summary>
+        internal static string PaginationNumericButtonList {
+            get {
+                return ResourceManager.GetString("PaginationNumericButtonList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //button[contains(@class,&apos;buttonAddToCart&apos;) and @type=&apos;button&apos;].
+        /// </summary>
+        internal static string ProductCartButtonList {
+            get {
+                return ResourceManager.GetString("ProductCartButtonList", resourceCulture);
             }
         }
         

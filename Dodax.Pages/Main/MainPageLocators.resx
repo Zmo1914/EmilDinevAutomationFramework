@@ -117,8 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AcceptAllButton" xml:space="preserve">
+    <value>//button[@data-qa='cookiesAgreementAcceptBtn']</value>
+  </data>
+  <data name="DataProductNameList" xml:space="preserve">
+    <value>//div[@data-product-name]</value>
+  </data>
+  <data name="DataProductPriceList" xml:space="preserve">
+    <value>//div[@data-product-price]</value>
+  </data>
+  <data name="Footer" xml:space="preserve">
+    <value>//div[@class='ft-copyright']</value>
+  </data>
+  <data name="PaginationAvtivePageButton" xml:space="preserve">
+    <value>//a[@data-qa='paginationLinkActive']</value>
+  </data>
+  <data name="PaginationBackButton" xml:space="preserve">
+    <value>//a[@data-qa='paginationLinkPrev']</value>
+  </data>
   <data name="PaginationNextButton" xml:space="preserve">
     <value>//a[@data-qa='paginationLinkNext']</value>
+  </data>
+  <data name="PaginationNumericButtonList" xml:space="preserve">
+    <value>//a[@data-qa='paginationLink']</value>
+  </data>
+  <data name="ProductCartButtonList" xml:space="preserve">
+    <value>//button[contains(@class,'buttonAddToCart') and @type='button']</value>
   </data>
   <data name="SearchResultPageContentList" xml:space="preserve">
     <value>//div[@data-qa='searchResultPageContent']</value>

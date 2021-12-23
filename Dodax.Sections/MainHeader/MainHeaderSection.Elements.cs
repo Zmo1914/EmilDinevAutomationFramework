@@ -20,22 +20,27 @@ namespace Dodax.Sections.MainHeader
             Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(MainHeaderSectionLocators.HeaderSearchBarInput)));
 
         private IWebElement HeaderSearchBarButton =>
-            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainHeaderSectionLocators.HeaderSearchBarInput)));
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainHeaderSectionLocators.HeaderSearchBarButton)));
 
         private SelectElement HeaderSearchBarSelect
         {
             get
             {
                 IWebElement element =
-                    Wait.Until(ExpectedConditions.ElementExists(By.CssSelector(MainHeaderSectionLocators.HeaderSearchBarSelect)));
+                    Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainHeaderSectionLocators.HeaderSearchBarSelect)));
 
                 return new SelectElement(element);
             }
         }
 
-
         private IWebElement HeaderShoppingCartButton =>
             Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainHeaderSectionLocators.HeaderShoppingCartButton)));
+
+        private IWebElement HeaderCategoriesButton =>
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainHeaderSectionLocators.HeaderCategoriesButton)));
+
+        private IWebElement HeaderAllCategoriesButton =>
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainHeaderSectionLocators.HeaderAllCategoriesButton)));
 
     }
 }

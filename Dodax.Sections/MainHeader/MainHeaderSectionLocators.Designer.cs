@@ -19,7 +19,7 @@ namespace Dodax.Sections.MainHeader {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class MainHeaderSectionLocators {
@@ -57,6 +57,24 @@ namespace Dodax.Sections.MainHeader {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //a[@data-qa=&apos;headerCategoriesTreeTitleLink&apos;].
+        /// </summary>
+        internal static string HeaderAllCategoriesButton {
+            get {
+                return ResourceManager.GetString("HeaderAllCategoriesButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //button[@data-qa=&apos;headerCategoriesOpenBtnDesktop&apos;].
+        /// </summary>
+        internal static string HeaderCategoriesButton {
+            get {
+                return ResourceManager.GetString("HeaderCategoriesButton", resourceCulture);
             }
         }
         

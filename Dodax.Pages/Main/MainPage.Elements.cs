@@ -20,12 +20,39 @@ namespace Dodax.Pages.Main
             MainHeaderSection = new MainHeaderSection(driver);
         }
 
-        private IList<IWebElement> SearchResultPageContentList =>
-            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.SearchResultPageContentList)));
+        private IWebElement AcceptAllButton =>
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainPageLocators.AcceptAllButton)));
 
+
+
+        /// ********************* Footer Pagination elements *********************
         private IWebElement PaginationNextButton =>
             Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainPageLocators.PaginationNextButton)));
 
+        private IWebElement PaginationBackButton =>
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainPageLocators.PaginationBackButton)));
+
+
+        private IWebElement PaginationActivePageButton =>
+            Wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(MainPageLocators.PaginationAvtivePageButton)));
+
+        private IList<IWebElement> PaginationNumericButtonList =>
+            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.PaginationNumericButtonList)));
+
+
+
+        /// ********************* Search result elements *********************
+        private IList<IWebElement> DataProductNameList => 
+            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.DataProductNameList)));
+
+        private IList<IWebElement> DataProductPriceList =>
+            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.DataProductPriceList)));
+
+        private IList<IWebElement> ProductCartButtonList =>
+            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.ProductCartButtonList)));
+
+        private IList<IWebElement> SearchResultPageContentList =>
+            Wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.XPath(MainPageLocators.SearchResultPageContentList)));
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Dotax.Utilities;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,26 @@ namespace Dodax.Sections.MainHeader
 {
     public partial class MainHeaderSection
     {
-        public void Search(string productName, Categories categories)
+        public void Search(Categories categories)
         {
             string categrie = categories.ToString();
 
             HeaderSearchBarSelect.SelectByText(categrie);
+            HeaderSearchBarButton.Click();
+        }
+
+        public void Search(string productName, string productCategorie)
+        {            
+            HeaderSearchBarSelect.SelectByText(productCategorie);
             HeaderSearchBarInput.SendKeys(productName);
 
             HeaderSearchBarButton.Click();
+        }
+
+        public void GoToAllcategoriesPage()
+        {
+            HeaderCategoriesButton.Click();
+            HeaderAllCategoriesButton.Click(); //SendKeys(Keys.Enter);
         }
     }
 }
